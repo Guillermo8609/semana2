@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad Diaria D7</title>
+    <link rel="stylesheet" href="/Actividad Diaria D7/CSS/estilos.css">
+    <script src="/Actividad Diaria D7/JavaScript/funciones.js"></script>
+</head>
+<body>
+    <div id="contenedor">
+        <div class="pestañas">
+            <input type="submit" class=" button activo"  name="agregar" value="Agregar"  class="activo" onclick="abrirPestaña();">
+            <input type="submit" class="button" name="listar" value="Listar"  onclick="abrirPestaña(evt, listar);" >
+            </div> <!--pestañas-->
+            <div id="agregar" class="panel activa">
+                <h3>Agregar Proyecto</h3>
+                <form >
+                    <input type="text" name="nombre de proyecto" placeholder="Nombre de proyecto" >
+                    <input type="text" name="lenguaje" placeholder=" Tipo de lenguaje">
+                    <input type="text" name="monto" placeholder="Monto" >
+                    <input type="submit" value="Agregar">
+                </form>
+            </div><!--#agregar-->
+            <div id="listar" class="panel ">
+                <h3>Historial de proyectos</h3>
+                <table>
+                    <tbody>
+                        <tr> 
+                        <th>Proyecto</th>
+                        <th>Lenguaje</th><!--th es la cabecera de la tabla-->
+                        <th>Monto facturado en Dólares</th> 
+                        </tr>
+                        </tbody>
+                </table>
+            </div><!--#listar-->
+    </div><!--contenedor-->
+</body>
+</html>
