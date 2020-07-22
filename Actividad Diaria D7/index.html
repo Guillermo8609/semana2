@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actividad Diaria D7</title>
-    <link rel="stylesheet" href="/Actividad Diaria D7/CSS/estilos.css">
+    <link rel="stylesheet" href="./CSS/estilos.css">
     <script src="./JavaScript/funciones.js"></script>
 </head>
 <body>
     <div id="contenedor">
         <div class="pestañas">
-            <input type="submit" class=" button activo"  name="agregar" value="Agregar"  class="activo" onclick="abrirPestaña();">
-            <input type="submit" class="button" name="listar" value="Listar"  onclick="abrirPestaña(evt, listar);" >
+            <button class=" activo"  value="Agregar"  onclick="abrirPestaña(event, 'agregar')">Agregar</button>
+            <button  value="Listar" onclick="abrirPestaña(event, 'listar' )">Listar</button>
             </div> <!--pestañas-->
-            <div id="agregar" class="panel activo">
+            <div id="agregar" class="panel ">
                 <h3>Agregar Proyecto</h3>
                 <form >
                     <input type="text" name="nombre de proyecto" placeholder="Nombre de proyecto" >
@@ -22,7 +22,7 @@
                     <input type="submit" value="Agregar">
                 </form>
             </div><!--#agregar-->
-            <div id="listar" class="panel ">
+            <div id="listar" class="panel activo ">
                 <h3>Historial de proyectos</h3>
                 <table>
                     <tbody>
