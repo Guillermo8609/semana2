@@ -1,4 +1,4 @@
-
+let bd;
 
 
 const abrirPestaña = (evt, idPanel ) => {
@@ -21,43 +21,27 @@ const abrirPestaña = (evt, idPanel ) => {
 }
 
 document.querySelector('#boton').addEventListener('click', fetchJSONFile())
-
-function  fetchJSONFile (){
-
-   let conexion = new XMLHttpRequest()
-   conexion.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      //document.getElementById("demo").innerHTML = this.responseText;
-      conmouseleave.log(this.responseText)
-    }
-  };
-conexion.open('GET', "../datos/db.json", false)
-
-conexion.send();
-
-
-
-  //console.log(conexion.responseText,"-----------sera?\n")
-    /* conexion.onreadystatechange = function(){
-        if (conexion.readyState === 4) {
-            if(conexion.status === 200) {
-                let datos = JSON.parse(conexion.responseText)
-                if(regreso) regreso(datos)
-
+function fetchJSONFile(path, vuelta) {
+    var peticion = new XMLHttpRequest();
+    peticion.onreadystatechange = function() {
+        if (peticion.readyState === 4) {
+            if (peticion.status === 200) {
+                var data = JSON.parse(peticion.responseText);
+                if (vuelta) vuelta(data);
             }
         }
-
-     }
-     conexion.open('GET', via)
-     conexion.send()
-      */
-    }
-    fetchJSONFile()
-   /*  fetchJSONFile(`../datos`, function(datos){
-        db=datos.trabajos
-        db.map(datos => document.getElementById("proyectos").insertRow(-1).innerHTML = `<td>${datos.nombre}</td><td>${datos.lenguaje}</td><td>${datos.monto} dolares</td>`)
-
-    }) */
+    };
+    peticion.open('GET', path);
+    peticion.send(); 
+  }
+  
+  //primero preguntar si la funcion principal es esta o la de arriba (hoisting)
+  fetchJSONFile('../datos/data.json', function(data){
+    
+    bd=data.trabajos
+    console.log (data) 
+    bd.map(datos=>document.getElementById("proyectos").insertRow(-1).innerHTML = `<td>${datos.nombre}</td><td>${datos.lenguaje}</td><td>${datos.monto} dolares</td>`)
+  });
 
 
 
