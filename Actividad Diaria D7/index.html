@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actividad Diaria D7</title>
     <link rel="stylesheet" href="./CSS/estilos.css">
-    <script src="./JavaScript/funciones.js"></script>
+   
 </head>
 <body>
     <div id="contenedor">
         <div class="pestañas">
             <button class=" activo"  value="Agregar"  onclick="abrirPestaña(event, 'agregar')">Agregar</button>
-            <button  value="Listar" onclick="abrirPestaña(event, 'listar' )">Listar</button>
+            <button id="boton" value="Listar" onclick="abrirPestaña(event, 'listar' )">Listar</button>
             </div> <!--pestañas-->
             <div id="agregar" class="panel ">
                 <h3>Agregar Proyecto</h3>
@@ -24,16 +24,18 @@
             </div><!--#agregar-->
             <div id="listar" class="panel activo ">
                 <h3>Historial de proyectos</h3>
-                <table>
-                    <tbody>
+                <table id="proyectos">
+                    
                         <tr> 
                         <th>Proyecto</th>
                         <th>Lenguaje</th><!--th es la cabecera de la tabla-->
                         <th>Monto facturado en Dólares</th> 
                         </tr>
-                        </tbody>
+                        
+                        
                 </table>
             </div><!--#listar-->
     </div><!--contenedor-->
+    <script src="./JavaScript/funciones.js"></script>
 </body>
 </html>

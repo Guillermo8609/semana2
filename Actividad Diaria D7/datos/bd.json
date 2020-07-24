@@ -1,0 +1,29 @@
+
+
+ { "trabajos": 
+  
+  [{"nombre":"PlussOne",
+   
+  "lenguaje":"HTML, CSS, JavaScript", 
+  
+  "monto":500
+  },
+
+  
+  {"nombre":"Meriva",
+   
+  "lenguaje":"HTML, CSS,", 
+  
+  "monto":500
+  },
+
+  
+  {"nombre":"Jingle",
+   
+  "lenguaje":"JavaScript", 
+  
+  "monto":500
+  }]
+
+  }
+

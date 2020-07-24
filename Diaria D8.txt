@@ -1,0 +1,25 @@
+    
+    
+    
+    Abre VS Code, selecciona en abiertos recientemente «semana2».
+
+
+    Dentro de «bd.json» crea un arreglo de objetos que contengan los siguientes atributos «nombre, lenguaje y monto».
+
+
+    En «funciones.js» crea una función que se conecte por medio de Ajax a tu archivo «bd.json».
+
+
+    Al conectarse que almacene tu contenido en una variable, utiliza For para recorrer el Array de objetos obtenidos y utilizando DOM suma filas con tus datos a la tabla en «Listar».
+
+
+    Agrega un «Listener» o un evento de línea a tu botón «agregar proyecto» y suma la función «insertar» que tenga como parámetro de entrada el evento que se generó.
+
+
+    Usa «PreventDefault()» suspender el comportamiento por defecto de un Submit y crea un objeto con los valores de los distinto campos del formulario obteniendo sus valores por medio de DOM y su método Value.
+
+
+    Utiliza Push para sumar el objeto a la variable que posee el arreglo de la respuesta del Ajax y luego suma una fila a la tabla con estos valores utilizando nuevamente DOM.
+
+    
+    Ten en cuenta que no almacenamos el JSON modificado así que si actualizas la página, los valores que agregues con la función «insertar» se eliminaran.
