@@ -25,11 +25,19 @@ document.querySelector('#boton').addEventListener('click', fetchJSONFile())
 function  fetchJSONFile (){
 
    let conexion = new XMLHttpRequest()
-   console.log(conexion)
-   conexion.open('GET', 'file:///Actividad', false)
-   conexion.send(null);
-if (conexion.status == 200)
-  dump(conexion.responseText);
+   conexion.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      //document.getElementById("demo").innerHTML = this.responseText;
+      conmouseleave.log(this.responseText)
+    }
+  };
+conexion.open('GET', "../datos/db.json", false)
+
+conexion.send();
+
+
+
+  //console.log(conexion.responseText,"-----------sera?\n")
     /* conexion.onreadystatechange = function(){
         if (conexion.readyState === 4) {
             if(conexion.status === 200) {
