@@ -20,11 +20,17 @@ const abrirPestaña = (evt, idPanel ) => {
     
 }
 
-document.querySelector('#boton').addEventListener('click', darDatos())
+document.querySelector('#boton').addEventListener('click', fetchJSONFile())
 
-function darDatos(via, regreso){
-    var conexion = new XMLHttpRequest()
-    conexion.onreadystatechange = function(){
+function  fetchJSONFile (){
+
+   let conexion = new XMLHttpRequest()
+   console.log(conexion)
+   conexion.open('GET', 'file:///Actividad', false)
+   conexion.send(null);
+if (conexion.status == 200)
+  dump(conexion.responseText);
+    /* conexion.onreadystatechange = function(){
         if (conexion.readyState === 4) {
             if(conexion.status === 200) {
                 let datos = JSON.parse(conexion.responseText)
@@ -36,13 +42,14 @@ function darDatos(via, regreso){
      }
      conexion.open('GET', via)
      conexion.send()
-    
+      */
     }
-    darDatos('Actividad Diaria D7\datos\bd.json', function(data){
+    fetchJSONFile()
+   /*  fetchJSONFile(`../datos`, function(datos){
         db=datos.trabajos
         db.map(datos => document.getElementById("proyectos").insertRow(-1).innerHTML = `<td>${datos.nombre}</td><td>${datos.lenguaje}</td><td>${datos.monto} dolares</td>`)
 
-    })
+    }) */
 
 
 
