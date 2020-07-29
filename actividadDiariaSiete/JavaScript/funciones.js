@@ -33,7 +33,7 @@ function fetchJSONFile(path, vuelta) {
             }
         }
     };
-    peticion.open('GET', path);
+    peticion.open('GET', path, true);
     peticion.send(); 
 }
   
@@ -51,7 +51,7 @@ function fetchJSONFile(path, vuelta) {
     
     document.getElementById("proyectos").insertRow(-1).innerHTML = `<td>${añadirUsuario.proyecto}</td><td>${añadirUsuario.lenguajes}</td><td>${añadirUsuario.montos} dolares</td>`
 
-    
+
     document.getElementById("proyecto").value=""
     document.getElementById("lenguajes").value=""
     document.getElementById("montos").value=""
