@@ -33,7 +33,7 @@ function fetchJSONFile(path, vuelta) {
     };
     peticion.open('GET', path);
     peticion.send(); 
-  }
+}
   
   //primero preguntar si la funcion principal es esta o la de arriba (hoisting)
   fetchJSONFile('../datos/data.json', function(data){
@@ -43,6 +43,7 @@ function fetchJSONFile(path, vuelta) {
     bd.map(datos=>document.getElementById("proyectos").insertRow(-1).innerHTML = `<td>${datos.nombre}</td><td>${datos.lenguaje}</td><td>${datos.monto} dolares</td>`)
   });
 
+ 
 
 
 
