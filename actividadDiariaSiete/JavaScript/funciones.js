@@ -1,4 +1,4 @@
-let bd;
+
 
 
 const abrirPestaña = (evt, idPanel ) => {
@@ -19,6 +19,8 @@ const abrirPestaña = (evt, idPanel ) => {
     
     
 }
+
+let bd;
 
 document.querySelector('#boton').addEventListener('click', fetchJSONFile())
 function fetchJSONFile(path, vuelta) {
@@ -48,6 +50,8 @@ function fetchJSONFile(path, vuelta) {
     añadirUsuario={proyecto:document.getElementById('proyecto').value,lenguajes:document.getElementById('lenguajes').value,montos:document.getElementById('montos').value}
     
     document.getElementById("proyectos").insertRow(-1).innerHTML = `<td>${añadirUsuario.proyecto}</td><td>${añadirUsuario.lenguajes}</td><td>${añadirUsuario.montos} dolares</td>`
+
+    
     document.getElementById("proyecto").value=""
     document.getElementById("lenguajes").value=""
     document.getElementById("montos").value=""
