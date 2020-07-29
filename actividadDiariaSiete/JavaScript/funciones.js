@@ -36,14 +36,20 @@ function fetchJSONFile(path, vuelta) {
 }
   
   //primero preguntar si la funcion principal es esta o la de arriba (hoisting)
-  fetchJSONFile('../datos/data.json', function(data){
+  fetchJSONFile('../datosDos/data.json', function(data){
     
     bd=data.trabajos
-    console.log (data) 
+    /* console.log (data)  */
     bd.map(datos=>document.getElementById("proyectos").insertRow(-1).innerHTML = `<td>${datos.nombre}</td><td>${datos.lenguaje}</td><td>${datos.monto} dolares</td>`)
   });
-
  
-
-
-
+  function meter(event){
+    event.preventDefault()
+    añadirUsuario={proyecto:document.getElementById('proyecto').value,lenguajes:document.getElementById('lenguajes').value,montos:document.getElementById('montos').value}
+    
+    document.getElementById("proyectos").insertRow(-1).innerHTML = `<td>${añadirUsuario.proyecto}</td><td>${añadirUsuario.lenguajes}</td><td>${añadirUsuario.montos} dolares</td>`
+    document.getElementById("proyecto").value=""
+    document.getElementById("lenguajes").value=""
+    document.getElementById("montos").value=""
+  
+  } 

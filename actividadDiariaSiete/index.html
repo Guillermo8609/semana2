@@ -15,11 +15,11 @@
             </div> <!--pestañas-->
             <div id="agregar" class="panel ">
                 <h3>Agregar Proyecto</h3>
-                <form >
-                    <input type="text" name="nombre de proyecto" placeholder="Nombre de proyecto" >
-                    <input type="text" name="lenguaje" placeholder=" Tipo de lenguaje">
-                    <input type="text" name="monto" placeholder="Monto" >
-                    <input type="submit" value="Agregar">
+                <form>
+                    <input id="proyecto" type="text" name="nombre de proyecto" placeholder="Nombre de proyecto" >
+                    <input id="lenguajes" type="text" name="lenguaje" placeholder=" Tipo de lenguaje">
+                    <input id="montos" type="text" name="monto" placeholder="Monto" >
+                    <input type="submit" value="Agregar" onclick="meter(event)">
                 </form>
             </div><!--#agregar-->
             <div id="listar" class="panel activo ">
