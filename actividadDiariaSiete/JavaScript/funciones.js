@@ -57,3 +57,27 @@ function fetchJSONFile(path, vuelta) {
     document.getElementById("montos").value=""
   
   } 
+  
+
+
+
+
+var contenido = document.querySelector('#contenido')
+
+
+
+const traer =()=>{
+fetch (`http://randomuser.me/api`)
+.then(res => res.json())
+.then(datos => {
+    //console.log(datos)
+    añadir(datos)
+})
+.catch(error => console.error(error))
+}
+
+const añadir=(datos)=>{
+    //console.log(datos)
+
+}
+

@@ -12,6 +12,7 @@
         <div class="pestañas">
             <button class=" activo"  value="Agregar"  onclick="abrirPestaña(event, 'agregar')">Agregar</button>
             <button id="boton" value="Listar" onclick="abrirPestaña(event, 'listar' )">Listar</button>
+            <button value="traer" class="activo" onclick="abrirPestaña(event,'traer')") onclick="traer()" id="contenido" >Mensajes</button>
             </div> <!--pestañas-->
             <div id="agregar" class="panel ">
                 <h3>Agregar Proyecto</h3>
@@ -35,6 +36,19 @@
                         
                 </table>
             </div><!--#listar-->
+            <div id="traer" class="panel activo ">
+                <h3>Solicitud de Contacto</h3>
+                <table id="listarMensajes">
+                    
+                        <tr> 
+                        <th>Apellido</th>
+                        <th>Teléfono</th><!--th es la cabecera de la tabla-->
+                        <th>Contacto</th> 
+                        </tr>
+                        
+                        
+                </table>
+            </div><!--#listarMensajes-->
     </div><!--contenedor-->
     <script src="./JavaScript/funciones.js"></script>
 </body>
