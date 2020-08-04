@@ -39,12 +39,13 @@ function fetchJSONFile(path, vuelta) {
   
   //primero preguntar si la funcion principal es esta o la de arriba (hoisting)
   fetchJSONFile('../datosDos/data.json', function(data){
+
     
     bd=data.trabajos
     /* console.log (data)  */
     bd.map(datos=>document.getElementById("proyectos").insertRow(-1).innerHTML = `<td>${datos.nombre}</td><td>${datos.lenguaje}</td><td>${datos.monto} dolares</td>`)
   });
- 
+  
   function meter(event){
     event.preventDefault()
     añadirUsuario={proyecto:document.getElementById('proyecto').value,lenguajes:document.getElementById('lenguajes').value,montos:document.getElementById('montos').value}
@@ -56,28 +57,38 @@ function fetchJSONFile(path, vuelta) {
     document.getElementById("lenguajes").value=""
     document.getElementById("montos").value=""
   
-  } 
-  
+  }
+
+
+  var contenido = document.querySelector('#listarMensajes')
 
 
 
-
-var contenido = document.querySelector('#contenido')
-
-
-
-const traer =()=>{
+const recoger =(event)=>{
+    event.preventDefault()
 fetch (`http://randomuser.me/api`)
 .then(res => res.json())
 .then(datos => {
-    //console.log(datos)
-    añadir(datos)
+    console.log(datos.results[0].name)
+    listarMensajes.innerHTML = `
+    <tr> 
+                        <td>${datos.results[0].name.last}</td>
+                        <td>${datos.results[0].phone}</td>
+                        <td>${datos.results[0].email}</td> 
+                        </tr>
+    
+    `
 })
 .catch(error => console.error(error))
 }
+ 
 
-const añadir=(datos)=>{
-    //console.log(datos)
 
-}
+ 
+
+
+
+
+
+
 
